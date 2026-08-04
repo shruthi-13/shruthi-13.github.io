@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shruthi Rajeshwari GS — Business & Data Analytics</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZ8368HKN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EZ8368HKN4');
+</script>
+<!-- Fraunces: distinctive literary display serif | Plus Jakarta Sans: warm modern body -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #FFFFFF; --navy-mid: #FBF8F5; --slate: #B8633F;
+    --gold: #C8703F; --gold-light: #E0935F;
+    --cream: #FDFBF9; --white: #FFFFFF;
+    --gray-100: #F5EFE9; --gray-300: #E5DAD0;
+    --gray-500: #9C8E83; --gray-700: #5A4D44;
+    --text: #2B2420; --radius: 4px; --radius-lg: 10px;
+    --hero-text: #2B2420; --hero-text-soft: #6B5D52; --hero-border: rgba(200,112,63,0.25);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--cream); color: var(--text);
+    font-size: 15px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,251,249,0.96); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 60px; border-bottom: 1px solid var(--gray-300); }
+  .nav-logo { font-family: 'Fraunces', serif; color: var(--text); font-size: 18px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: var(--gray-700); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.2s; }
+  .nav-mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(253,251,249,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-300); padding: 16px 20px; flex-direction: column; gap: 0; z-index: 99; }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a { color: var(--gray-700); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid var(--gray-100); transition: color 0.2s; }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+  .nav-mobile-menu a:hover { color: var(--gold); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 100px 48px 80px; position: relative; overflow: hidden;
+    background: var(--cream);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop');
+    background-size: cover; background-position: center;
+    opacity: 0.10;
+  }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(253,251,249,0.97) 50%, rgba(253,251,249,0.85)); }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 80px; position: relative; z-index: 1; }
+  .hero-text { flex: 1; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  h1 { font-family: 'Fraunces', serif; font-size: clamp(38px, 5vw, 60px); font-weight: 600; color: var(--text); line-height: 1.1; margin-bottom: 20px; }
+  h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub { color: var(--gray-700); font-size: 16px; line-height: 1.7; max-width: 480px; margin-bottom: 36px; font-weight: 300; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .chip { border: 1px solid rgba(200,112,63,0.35); background: rgba(200,112,63,0.06); color: var(--gold); font-size: 11px; font-weight: 500; letter-spacing: 0.07em; padding: 5px 14px; border-radius: 2px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--white); font-weight: 600; font-size: 13px; letter-spacing: 0.06em; padding: 12px 28px; border: none; border-radius: var(--radius); text-decoration: none; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--text); font-weight: 500; font-size: 13px; letter-spacing: 0.06em; padding: 12px 28px; border: 1px solid var(--gray-300); border-radius: var(--radius); text-decoration: none; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-stats { flex-shrink: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 280px; }
+  .stat-box { background: var(--white); box-shadow: 0 2px 12px rgba(43,36,32,0.05); padding: 28px 20px; text-align: center; border: 1px solid var(--gray-300); }
+  .stat-box:first-child { border-radius: var(--radius-lg) 0 0 0; }
+  .stat-box:nth-child(2) { border-radius: 0 var(--radius-lg) 0 0; }
+  .stat-box:nth-child(3) { border-radius: 0 0 0 var(--radius-lg); }
+  .stat-box:last-child { border-radius: 0 0 var(--radius-lg) 0; }
+  .stat-num { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+  .stat-label { font-size: 11px; color: var(--gray-500); letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; }
+
+  /* SECTIONS */
+  section { padding: 96px 48px; }
+  section:nth-child(even) { background: var(--white); }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-header { margin-bottom: 56px; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .section-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h2 { font-family: 'Fraunces', serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 600; color: var(--text); line-height: 1.15; }
+  .section-rule { width: 48px; height: 2px; background: var(--gold); margin-top: 16px; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 72px; align-items: start; }
+  .about-photo-wrap { position: relative; }
+  .about-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius-lg); display: block; border: 1px solid var(--gray-300); }
+  .about-photo-badge { position: absolute; bottom: -16px; right: -16px; background: var(--white); color: var(--text); border-radius: var(--radius-lg); padding: 16px 20px; border: 1px solid var(--gray-300); box-shadow: 0 6px 20px rgba(43,36,32,0.08); text-align: center; }
+  .about-photo-badge strong { display: block; font-family: 'Fraunces', serif; font-size: 22px; color: var(--gold); }
+  .about-photo-badge span { font-size: 11px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; }
+  .about-right { padding-top: 8px; }
+  .about-body { font-size: 15px; line-height: 1.75; color: var(--gray-700); }
+  .about-body p + p { margin-top: 16px; }
+  .about-body strong { color: var(--text); font-weight: 600; }
+  .info-list { list-style: none; margin-top: 28px; }
+  .info-list li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--gray-100); font-size: 13px; }
+  .info-list li:last-child { border-bottom: none; }
+  .info-key { color: var(--gray-500); font-weight: 500; min-width: 80px; flex-shrink: 0; }
+  .info-val { color: var(--text); font-weight: 500; }
+  .about-links { margin-top: 24px; display: flex; gap: 14px; }
+  .about-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--slate); text-decoration: none; border-bottom: 1px solid var(--gray-300); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+  .about-link:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; }
+  .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 0 48px; padding: 40px 0; border-bottom: 1px solid var(--gray-100); position: relative; }
+  .exp-item:first-child { padding-top: 0; }
+  .exp-item::before { content: ''; position: absolute; top: 0; left: 200px; width: 1px; height: 100%; background: var(--gray-100); }
+  .exp-meta { padding-right: 40px; padding-top: 2px; }
+  .exp-period { font-size: 12px; font-weight: 600; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .exp-company { font-size: 13px; color: var(--gray-500); }
+  .exp-role { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 4px; font-family: 'Fraunces', serif; }
+  .exp-type { font-size: 12px; color: var(--gray-500); margin-bottom: 14px; font-weight: 500; letter-spacing: 0.04em; }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .exp-bullets li { font-size: 14px; color: var(--gray-700); line-height: 1.6; padding-left: 16px; position: relative; }
+  .exp-bullets li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .tag { background: var(--gray-100); color: var(--gray-700); font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 2px; letter-spacing: 0.04em; }
+
+  /* PROJECTS */
+  .projects-section-bg { position: relative; overflow: hidden; }
+  .projects-section-bg::before { content: ''; position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=60&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0.04; pointer-events: none; }
+  #projects-loading { text-align: center; color: var(--gray-500); font-size: 14px; padding: 40px 0; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .spinner { width: 16px; height: 16px; border: 2px solid var(--gray-300); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .project-card { background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.2s, box-shadow 0.2s; }
+  .project-card:hover { border-color: var(--gold); box-shadow: 0 8px 28px rgba(200,112,63,0.14); }
+  .project-card.featured { border-color: var(--gold); box-shadow: 0 4px 20px rgba(200,112,63,0.12); }
+  .proj-thumb-wrap { width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--gray-100); position: relative; border-bottom: 1px solid var(--gray-300); }
+  .proj-thumb { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.4s; }
+  .project-card:hover .proj-thumb { transform: scale(1.04); }
+  .proj-thumb-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--gray-300); }
+  .proj-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+  .proj-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 12px; }
+  .proj-name { font-size: 16px; font-weight: 600; color: var(--text); font-family: 'Fraunces', serif; text-transform: capitalize; }
+  .proj-link { color: var(--gray-500); text-decoration: none; flex-shrink: 0; transition: color 0.2s; }
+  .proj-link:hover { color: var(--gold); }
+  .proj-desc { font-size: 13px; color: var(--gray-700); line-height: 1.6; flex: 1; margin-bottom: 16px; }
+  .proj-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .proj-lang { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gray-500); font-weight: 500; }
+  .lang-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .proj-stars { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--gray-500); }
+  .proj-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
+  .proj-badge.featured-badge { background: rgba(200,112,63,0.12); color: var(--gold); border: 1px solid rgba(200,112,63,0.3); }
+  .proj-error { color: var(--gray-500); font-size: 14px; text-align: center; padding: 32px 0; }
+
+  /* SKILLS */
+  .skills-with-image { display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: center; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .skill-group { background: var(--cream); border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: 24px; }
+  .skill-group-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .skill-group-title::before { content: ''; width: 14px; height: 1px; background: var(--gold); }
+  .skill-items { display: flex; flex-direction: column; gap: 10px; }
+  .skill-row { display: flex; align-items: center; justify-content: space-between; }
+  .skill-name { font-size: 13px; color: var(--text); font-weight: 500; min-width: 100px; }
+  .skill-bar-bg { height: 3px; background: var(--gray-300); border-radius: 2px; flex: 1; margin: 0 12px; overflow: hidden; }
+  .skill-bar-fill { height: 100%; background: var(--gold); border-radius: 2px; }
+  .skills-image-wrap { position: relative; }
+  .skills-photo { width: 100%; border-radius: var(--radius-lg); display: block; object-fit: cover; aspect-ratio: 3/4; border: 1px solid var(--gray-300); }
+  .skills-photo-overlay { position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(13,27,42,0.88); border-radius: var(--radius); padding: 16px 20px; border: 1px solid rgba(200,112,63,0.25); }
+  .skills-photo-label { font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; font-weight: 600; }
+  .skills-photo-text { font-size: 13px; color: #ccc; line-height: 1.5; }
+
+  /* EDUCATION */
+  .edu-section-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .edu-visual { width: 100%; aspect-ratio: 16/11; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--gray-300); }
+  .edu-grid { display: flex; flex-direction: column; gap: 20px; }
+  .edu-card { background: var(--white); border: 1px solid var(--gray-300); border-left: 3px solid var(--gold); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 24px 24px 24px 22px; }
+  .edu-degree { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .edu-school { font-size: 13px; color: var(--gray-700); font-weight: 500; margin-bottom: 2px; }
+  .edu-year { font-size: 11px; color: var(--gold); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .edu-note { font-size: 13px; color: var(--gray-500); line-height: 1.5; }
+
+  /* CONTACT */
+  #contact { background: var(--gray-100); position: relative; overflow: hidden; }
+  #contact::before { content: ''; position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=1400&q=60&auto=format&fit=crop'); background-size: cover; background-position: center; opacity: 0.04; }
+  #contact h2 { color: var(--text); }
+  #contact .section-eyebrow { color: var(--gold); }
+  #contact .section-rule { background: var(--gold); }
+  .contact-inner { position: relative; z-index: 1; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .contact-body { font-size: 16px; color: var(--gray-700); line-height: 1.75; font-weight: 300; }
+  .contact-body strong { color: var(--text); font-weight: 500; }
+  .contact-items { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+  .contact-row { display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--gray-700); font-size: 14px; transition: color 0.2s, border-color 0.2s; padding: 14px 18px; border: 1px solid var(--gray-300); border-radius: var(--radius); background: var(--white); }
+  .contact-row:hover { color: var(--gold); border-color: rgba(200,112,63,0.4); }
+  .contact-icon { width: 36px; height: 36px; border-radius: var(--radius); background: rgba(200,112,63,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-label { font-size: 11px; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 2px; }
+  .contact-val { font-size: 13px; color: var(--gray-700); }
+  .contact-row:hover .contact-val { color: var(--gold); }
+  .contact-cta-box { background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius-lg); padding: 36px; text-align: center; box-shadow: 0 2px 16px rgba(43,36,32,0.04); }
+  .contact-cta-title { font-family: 'Fraunces', serif; font-size: 22px; color: var(--text); margin-bottom: 12px; }
+  .contact-cta-sub { font-size: 14px; color: var(--gray-500); margin-bottom: 24px; line-height: 1.6; }
+
+  footer { background: var(--white); border-top: 1px solid var(--gray-300); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-copy { font-size: 12px; color: var(--gray-500); }
+  .footer-badge { font-size: 12px; color: var(--gray-500); display: flex; align-items: center; gap: 6px; }
+  .footer-badge span { color: var(--gold); }
+
+  /* ── CHATBOT ── */
+  #chat-fab {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 54px; height: 54px; border-radius: 50%;
+    background: var(--gold); color: #fff;
+    border: none; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(200,112,63,0.45);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+  }
+  #chat-fab:hover { background: var(--gold-light); transform: scale(1.06); }
+  #chat-fab svg { pointer-events: none; }
+
+  #chat-panel {
+    position: fixed; bottom: 92px; right: 28px; z-index: 200;
+    width: 340px; max-height: 480px;
+    background: var(--white); border: 1px solid var(--gray-300);
+    border-radius: 14px; box-shadow: 0 12px 48px rgba(43,36,32,0.14);
+    display: none; flex-direction: column; overflow: hidden;
+  }
+  #chat-panel.open { display: flex; }
+
+  .chat-head {
+    padding: 16px 20px; background: var(--gold); color: #fff;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .chat-head-left { display: flex; align-items: center; gap: 10px; }
+  .chat-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; font-family: 'Fraunces', serif;
+  }
+  .chat-head-info { display: flex; flex-direction: column; }
+  .chat-head-name { font-size: 14px; font-weight: 600; line-height: 1.2; }
+  .chat-head-sub { font-size: 11px; opacity: 0.85; }
+  .chat-close { background: none; border: none; color: #fff; cursor: pointer; padding: 2px; opacity: 0.8; transition: opacity 0.2s; }
+  .chat-close:hover { opacity: 1; }
+
+  .chat-messages {
+    flex: 1; overflow-y: auto; padding: 16px;
+    display: flex; flex-direction: column; gap: 10px;
+    scroll-behavior: smooth;
+  }
+  .chat-messages::-webkit-scrollbar { width: 4px; }
+  .chat-messages::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 2px; }
+
+  .msg { max-width: 82%; font-size: 13px; line-height: 1.55; }
+  .msg.bot { align-self: flex-start; background: var(--gray-100); color: var(--text); padding: 10px 13px; border-radius: 4px 14px 14px 4px; }
+  .msg.user { align-self: flex-end; background: var(--gold); color: #fff; padding: 10px 13px; border-radius: 14px 4px 4px 14px; }
+
+  .chat-suggestions {
+    padding: 4px 16px 10px; display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0;
+  }
+  .sug-btn {
+    font-size: 11px; font-weight: 500; padding: 5px 11px;
+    border: 1px solid var(--gray-300); border-radius: 20px;
+    background: var(--cream); color: var(--gray-700);
+    cursor: pointer; transition: border-color 0.2s, color 0.2s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .sug-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  .chat-input-row {
+    display: flex; gap: 8px; padding: 12px 16px;
+    border-top: 1px solid var(--gray-100); flex-shrink: 0;
+  }
+  #chat-input {
+    flex: 1; border: 1px solid var(--gray-300); border-radius: var(--radius);
+    padding: 9px 13px; font-size: 13px; font-family: 'Plus Jakarta Sans', sans-serif;
+    outline: none; color: var(--text); background: var(--cream);
+    transition: border-color 0.2s;
+  }
+  #chat-input:focus { border-color: var(--gold); }
+  #chat-send {
+    background: var(--gold); color: #fff; border: none;
+    border-radius: var(--radius); padding: 9px 14px;
+    cursor: pointer; font-size: 13px; font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background 0.2s;
+  }
+  #chat-send:hover { background: var(--gold-light); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    section { padding: 64px 20px; }
+    #hero { padding: 90px 20px 60px; }
+    .hero-inner { flex-direction: column; gap: 40px; }
+    .hero-stats { width: 100%; max-width: 340px; }
+    .about-grid, .skills-with-image, .edu-section-wrap, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-item::before { display: none; }
+    .exp-meta { padding-right: 0; padding-bottom: 8px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    footer { padding: 20px; flex-direction: column; text-align: center; }
+    .about-photo-badge { bottom: -12px; right: -8px; }
+    .skills-with-image { display: flex; flex-direction: column; }
+    .skills-image-wrap { display: none; }
+    #chat-panel { width: calc(100vw - 32px); right: 16px; bottom: 80px; }
+    #chat-fab { right: 16px; bottom: 16px; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0 16px; height: 54px; }
+    .nav-logo { font-size: 15px; }
+    .nav-mobile-menu { top: 54px; }
+    #hero { padding: 74px 16px 48px; min-height: auto; }
+    h1 { font-size: 28px; }
+    .hero-sub { font-size: 14px; }
+    .hero-chips { gap: 6px; }
+    .chip { font-size: 10px; padding: 4px 10px; }
+    .hero-actions { flex-direction: column; gap: 10px; }
+    .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 13px 20px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; width: 100%; max-width: 100%; }
+    .stat-box { padding: 20px 12px; }
+    .stat-num { font-size: 24px; }
+    .stat-label { font-size: 10px; }
+    section { padding: 56px 16px; }
+    h2 { font-size: 26px; }
+    .about-photo-wrap { margin-bottom: 32px; }
+    .about-photo-badge { padding: 10px 14px; bottom: -10px; right: -4px; }
+    .about-photo-badge strong { font-size: 18px; }
+    .exp-item { padding: 28px 0; }
+    .exp-role { font-size: 16px; }
+    .exp-bullets li { font-size: 13px; }
+    .exp-tags { gap: 5px; }
+    .tag { font-size: 10px; padding: 3px 8px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+    .project-card { border-radius: 8px; }
+    .proj-body { padding: 18px; }
+    .proj-name { font-size: 14px; }
+    .proj-desc { font-size: 12px; }
+    .skills-grid { grid-template-columns: 1fr; gap: 14px; }
+    .skill-group { padding: 18px; }
+    .edu-grid { gap: 14px; }
+    .edu-card { padding: 18px 18px 18px 16px; }
+    .edu-degree { font-size: 15px; }
+    .contact-grid { gap: 28px; }
+    .contact-cta-box { padding: 24px 20px; }
+    .contact-row { padding: 12px 14px; }
+    footer { padding: 16px; gap: 8px; }
+    .footer-copy, .footer-badge { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Shruthi Rajeshwari <span>GS</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#education" onclick="closeMobile()">Education</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+</script>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Business &amp; Data Analytics</div>
+      <h1>Turning data into<br /><em>decisions that matter</em></h1>
+      <p class="hero-sub">MBA in Business Analytics from IIT Stuart School of Business. I bridge the gap between raw data and business strategy — through SQL, dashboards, and operational frameworks that actually get used.</p>
+      <div class="hero-chips">
+        <span class="chip">Business Intelligence</span>
+        <span class="chip">Data Analytics</span>
+        <span class="chip">Operations Analytics</span>
+        <span class="chip">Chicago, IL</span>
+        <span class="chip">STEM OPT</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get in touch</a>
+        <a href="#projects" class="btn-outline">View my work</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box"><div class="stat-num">18+</div><div class="stat-label">KPI Metrics Built</div></div>
+      <div class="stat-box"><div class="stat-num">SQL</div><div class="stat-label">Python · Power BI</div></div>
+      <div class="stat-box"><div class="stat-num">MBA</div><div class="stat-label">Business Analytics</div></div>
+      <div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Degrees · STEM</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Who I am</div>
+      <h2>Analyst. Problem-solver.<br />Builder of frameworks.</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <img class="about-photo"
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop"
+          alt="Data analytics workspace"
+          loading="lazy" />
+        <div class="about-photo-badge">
+          <strong>MBA</strong>
+          <span>IIT Stuart · 2025</span>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="about-body">
+          <p>I'm a Business Analytics MBA graduate from <strong>Illinois Institute of Technology's Stuart School of Business</strong>, with a foundation in Biomedical Engineering from PSG College of Technology in India.</p>
+          <p>That combination gives me a rare ability to work with complex, structured data and translate findings into strategy that non-technical stakeholders actually understand.</p>
+          <p>Currently serving as <strong>Head of Business Intelligence &amp; Operations Analytics at Wakanaka</strong> — where I built an 18-metric KPI framework, architected ClickUp pipeline workflows, and developed weighted scoring models to prioritize B2B enterprise opportunities.</p>
+        </div>
+        <ul class="info-list">
+          <li><span class="info-key">Location</span><span class="info-val">Chicago, IL</span></li>
+          <li><span class="info-key">Status</span><span class="info-val">Open to work</span></li>
+          <li><span class="info-key">Auth</span><span class="info-val">STEM OPT</span></li>
+          <li><span class="info-key">Target roles</span><span class="info-val">BA · DA · Ops · BI Analyst</span></li>
+          <li><span class="info-key">Tools</span><span class="info-val">SQL · Python · Tableau · Power BI</span></li>
+        </ul>
+        <div class="about-links">
+          <a href="https://linkedin.com/in/shruthi-gs" class="about-link" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/shruthi-13" class="about-link" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Where I've worked</div>
+      <h2>Experience</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">Jun 2026 – Present</div>
+          <div class="exp-company">Wakanaka · Remote</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Head of Business Intelligence &amp; Operations Analytics</div>
+          <div class="exp-type">Full-time · Zambia (Remote)</div>
+          <ul class="exp-bullets">
+            <li>Designed and deployed an 18-metric KPI framework to monitor organizational performance across sales, ops, and finance functions</li>
+            <li>Architected a ClickUp pipeline system to streamline B2B enterprise lead tracking and workflow visibility</li>
+            <li>Built a weighted scoring model to prioritize enterprise opportunities, reducing sales cycle decision time</li>
+            <li>Led BI reporting infrastructure from the ground up, enabling data-driven decision-making across teams</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">KPI Framework</span><span class="tag">ClickUp</span><span class="tag">B2B Analytics</span><span class="tag">Power BI</span><span class="tag">Operations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">Jun 2026 – Present</div>
+          <div class="exp-company">Mindset2Money · Chicago, IL</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Data Analytics Intern — Generation Wealth Conference</div>
+          <div class="exp-type">Volunteer · Hybrid/Remote</div>
+          <ul class="exp-bullets">
+            <li>Maintain and execute weekly updates to the conference operational scorecard, tracking ticket sales, registration pacing, speaker onboarding, and volunteer pipelines across three cohorts</li>
+            <li>Designed and executed a data audit process and quality checklist to ensure error-free synchronization between Luma and Jotform, eliminating duplicate entries and discrepancies</li>
+            <li>Built registration forms in Jotform, aligning field structures and webhook outputs with backend engineering requirements for automated data transfer</li>
+            <li>Partnered cross-functionally with Finance, App/Engineering, and Volunteer teams to maintain a single source of truth across event data systems</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">Data Quality</span><span class="tag">Jotform</span><span class="tag">Luma</span><span class="tag">KPI Tracking</span><span class="tag">Cross-functional</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">2024 – 2025</div>
+          <div class="exp-company">IIT Stuart · Chicago</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">MBA Graduate — Business Analytics</div>
+          <div class="exp-type">Academic + Project Work · Illinois Institute of Technology</div>
+          <ul class="exp-bullets">
+            <li>Applied SQL, Python, and Tableau to real-world datasets across healthcare, finance, and operations domains</li>
+            <li>Developed capstone projects with actionable business recommendations grounded in quantitative analysis</li>
+            <li>Completed graduate coursework in data analytics, business intelligence, and strategy</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Business Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">May 2025 – Aug 2025</div>
+          <div class="exp-company">Sapphire Webs · Remote</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Marketing Analytics Intern</div>
+          <div class="exp-type">Internship · Coimbatore, Tamil Nadu, India</div>
+          <ul class="exp-bullets">
+            <li>Analyzed campaign performance metrics and delivered SEO recommendations that improved search rankings and organic traffic</li>
+            <li>Drove a 10% increase in social media engagement through data-informed campaign optimization, growing audience reach by 100+ followers</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">Campaign Analytics</span><span class="tag">SEO</span><span class="tag">Performance Metrics</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects-section-bg">
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <div class="section-header">
+      <div class="section-eyebrow">Selected work</div>
+      <h2>Projects</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div id="projects-loading"><div class="spinner"></div> Loading projects…</div>
+    <div id="projects-grid" class="projects-grid" style="display:none;"></div>
+    <div id="projects-error" class="proj-error" style="display:none;"></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Capabilities</div>
+      <h2>Skills &amp; tools</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="skills-with-image">
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Data &amp; Analytics</div>
+          <div class="skill-items">
+            <div class="skill-row"><span class="skill-name">SQL</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:92%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:78%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Excel</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Visualization</div>
+          <div class="skill-items">
+            <div class="skill-row"><span class="skill-name">Tableau</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Power BI</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">DAX</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Operations</div>
+          <div class="skill-items">
+            <div class="skill-row"><span class="skill-name">ClickUp</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">KPI Frameworks</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Pipeline Mgmt</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Business</div>
+          <div class="skill-items">
+            <div class="skill-row"><span class="skill-name">Requirements</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Stakeholder Comms</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Agile / Scrum</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:72%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-image-wrap">
+        <img class="skills-photo"
+          src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&q=80&auto=format&fit=crop"
+          alt="Analytics dashboard"
+          loading="lazy" />
+        <div class="skills-photo-overlay">
+          <div class="skills-photo-label">Core strengths</div>
+          <div class="skills-photo-text">From raw SQL queries to executive-ready dashboards — end-to-end ownership of the analytics layer.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Academic background</div>
+      <h2>Education</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="edu-section-wrap">
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-degree">MBA — Business Analytics</div>
+          <div class="edu-school">Illinois Institute of Technology · Stuart School of Business</div>
+          <div class="edu-year">2024 – 2025 · Chicago, IL</div>
+          <div class="edu-note">Specialized in data-driven decision-making, BI strategy, and business analytics. STEM-designated program.</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">B.E. — Biomedical Engineering</div>
+          <div class="edu-school">PSG College of Technology</div>
+          <div class="edu-year">Coimbatore, India</div>
+          <div class="edu-note">Engineering foundation with emphasis on analytical methods, systems thinking, and technical problem-solving.</div>
+        </div>
+      </div>
+      <div class="edu-visual">
+        <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=900&q=80&auto=format&fit=crop"
+          style="width:100%;height:100%;object-fit:cover;" alt="University campus" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner contact-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Let's connect</div>
+      <h2>Open to opportunities</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-body">
+          I'm actively looking for full-time roles as a <strong>Business Analyst, Data Analyst, Operations Analyst, or BI Analyst</strong> in Chicago — and open to relocation for the right opportunity.<br /><br />
+          If you're building a data-driven team and want someone who can own the analytical layer end-to-end, let's talk.
+        </p>
+        <div class="contact-items">
+          <a href="https://linkedin.com/in/shruthi-gs" class="contact-row" target="_blank">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8703F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-val">linkedin.com/in/shruthi-gs</span>
+            </div>
+          </a>
+          <a href="https://github.com/shruthi-13" class="contact-row" target="_blank">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8703F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-val">github.com/shruthi-13</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-cta-box">
+        <div class="contact-cta-title">Ready to collaborate?</div>
+        <p class="contact-cta-sub">Whether it's a full-time role, a contract project, or a conversation about data strategy — I'd love to connect.</p>
+        <a href="https://linkedin.com/in/shruthi-gs" class="btn-primary" target="_blank">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-copy">© 2026 Shruthi Rajeshwari GS · Chicago, IL</span>
+  <span class="footer-badge">Projects live from <span>GitHub API</span></span>
+</footer>
+
+<!-- ══════════════════════════════════════
+     CHATBOT
+════════════════════════════════════════ -->
+<button id="chat-fab" onclick="toggleChat()" aria-label="Chat with me">
+  <svg id="chat-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg id="chat-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+
+<div id="chat-panel">
+  <div class="chat-head">
+    <div class="chat-head-left">
+      <div class="chat-avatar">S</div>
+      <div class="chat-head-info">
+        <span class="chat-head-name">Shruthi's Assistant</span>
+        <span class="chat-head-sub">Ask me anything about Shruthi</span>
+      </div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="msg bot">Hi! I'm a quick way to learn about Shruthi. What would you like to know?</div>
+  </div>
+  <div class="chat-suggestions" id="chat-suggestions">
+    <button class="sug-btn" onclick="askSug(this)">Background</button>
+    <button class="sug-btn" onclick="askSug(this)">Skills</button>
+    <button class="sug-btn" onclick="askSug(this)">Current role</button>
+    <button class="sug-btn" onclick="askSug(this)">AI project</button>
+    <button class="sug-btn" onclick="askSug(this)">Contact</button>
+  </div>
+  <div class="chat-input-row">
+    <input id="chat-input" type="text" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter') sendChat()" />
+    <button id="chat-send" onclick="sendChat()">Send</button>
+  </div>
+</div>
+
+<script>
+// ── GitHub Projects ──
+(function() {
+  const FEATURED_PROJECTS = [
+    {
+      name: "Hospital AI Agent",
+      description: "Patient-facing AI agent built on the ReAct (Reason + Act) pattern. Patients can ask about their diagnosis in plain language — the agent looks up real hospital data, generates empathetic explanations, and suggests questions for their doctor. Built with Python, Groq LLaMA, and a Gradio chat UI.",
+      url: "https://github.com/shruthi-13/hospital-ai-agent",
+      lang: "Python",
+      langColor: "#3572A5",
+      stars: null,
+      thumb: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80&auto=format&fit=crop",
+      featured: true
+    },
+    {
+      name: "Trading Operations Data Pipeline",
+      description: "End-to-end data pipeline for detecting trade errors in financial operations. Identifies anomalies and discrepancies across trading data to surface issues before they impact settlement — combining data quality checks, validation logic, and structured reporting.",
+      url: "https://github.com/shruthi-13/trading-pipeline-trade-errors",
+      lang: "SQL",
+      langColor: "#e38c00",
+      stars: null,
+      thumb: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&q=80&auto=format&fit=crop",
+      featured: true
+    }
+  ];
+  // Keep FEATURED as first for backward compat
+  const FEATURED = FEATURED_PROJECTS[0];
+
+  const LANG_COLORS = {
+    "Python": "#3572A5", "JavaScript": "#f7df1e", "TypeScript": "#3178c6",
+    "Jupyter Notebook": "#DA5B0B", "HTML": "#e34c26", "CSS": "#563d7c",
+    "R": "#276DC3", "SQL": "#e38c00"
+  };
+
+  const THUMBS = [
+    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=700&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1543286386-2e659306cd6c?w=700&q=80&auto=format&fit=crop"
+  ];
+
+  const SKIP = ['shruthi-13.github.io'];
+
+  function cardHTML(r, idx) {
+    const thumb = r.thumb || THUMBS[idx % THUMBS.length];
+    const dot = r.langColor || (r.lang && LANG_COLORS[r.lang]) || '#aaa';
+    const name = r.name.replace(/-/g, ' ');
+    const desc = r.description || 'No description available.';
+    const stars = r.stars != null ? `<span class="proj-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> ${r.stars}</span>` : '';
+    const badge = r.featured ? `<span class="proj-badge featured-badge">Featured</span>` : '';
+    return `
+      <div class="project-card${r.featured ? ' featured' : ''}">
+        <div class="proj-thumb-wrap">
+          <img class="proj-thumb" src="${thumb}" alt="${name}" loading="lazy" />
+        </div>
+        <div class="proj-body">
+          <div class="proj-header">
+            <span class="proj-name">${name}</span>
+            <a href="${r.url}" target="_blank" class="proj-link" title="View on GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <p class="proj-desc">${desc}</p>
+          <div class="proj-footer">
+            <span class="proj-lang"><span class="lang-dot" style="background:${dot}"></span>${r.lang || 'N/A'}</span>
+            ${badge}${stars}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  const grid = document.getElementById('projects-grid');
+  const loading = document.getElementById('projects-loading');
+  const errDiv = document.getElementById('projects-error');
+
+  fetch('https://api.github.com/users/shruthi-13/repos?sort=updated&per_page=30')
+    .then(r => r.json())
+    .then(repos => {
+      loading.style.display = 'none';
+      grid.style.display = 'grid';
+
+      const filtered = repos
+        .filter(r => !r.fork && !SKIP.includes(r.name) && r.name !== 'hospital-ai-agent')
+        .slice(0, 6);
+
+      let html = FEATURED_PROJECTS.map((p, i) => cardHTML(p, i)).join('');
+      filtered.forEach((r, i) => {
+        html += cardHTML({
+          name: r.name,
+          description: r.description,
+          url: r.html_url,
+          lang: r.language,
+          stars: r.stargazers_count
+        }, FEATURED_PROJECTS.length + i);
+      });
+      grid.innerHTML = html;
+    })
+    .catch(() => {
+      loading.style.display = 'none';
+      grid.style.display = 'grid';
+      grid.innerHTML = FEATURED_PROJECTS.map((p, i) => cardHTML(p, i)).join('');
+      errDiv.style.display = 'block';
+      errDiv.textContent = 'Could not load other GitHub repositories right now.';
+    });
+})();
+
+// ── Chatbot ──
+const QA = [
+  {
+    keys: ['background', 'who is', 'about', 'tell me', 'yourself', 'intro'],
+    answer: "Shruthi is a Business Analytics MBA graduate from IIT Stuart School of Business in Chicago, with a B.E. in Biomedical Engineering from PSG College of Technology in India. That rare combo — engineering rigor plus business strategy — is what sets her apart. She's really good at turning messy data into decisions that actually stick."
+  },
+  {
+    keys: ['education', 'degree', 'mba', 'iit', 'stuart', 'psg', 'biomedical', 'university', 'college'],
+    answer: "She holds two degrees — an MBA in Business Analytics from IIT Stuart School of Business (Chicago, 2025), and a B.E. in Biomedical Engineering from PSG College of Technology (India). Both are STEM-designated programs."
+  },
+  {
+    keys: ['current role', 'wakanaka', 'job', 'work', 'working', 'position', 'head of'],
+    answer: "Right now she's the Head of Business Intelligence & Operations Analytics at Wakanaka, a remote role based in Zambia. She built an 18-metric KPI framework from scratch, designed a ClickUp B2B pipeline, and created weighted scoring models to help the sales team prioritize faster."
+  },
+  {
+    keys: ['skill', 'tool', 'technology', 'know', 'use', 'python', 'sql', 'tableau', 'power bi', 'excel', 'clickup'],
+    answer: "Her core stack: SQL, Python, Excel for analytics — Tableau, Power BI, and DAX for visualization — ClickUp and KPI frameworks for operations. She's also done work with AI agents (Python, Groq API), campaign analytics, SEO, and data quality auditing."
+  },
+  {
+    keys: ['ai', 'machine learning', 'ml', 'agent', 'hospital', 'diagnosis', 'chatbot', 'groq', 'llm', 'react'],
+    answer: "She built a hospital AI agent for the Open Avenues Build Fellowship! It's a patient-facing chatbot where someone can type \"I was just told I have diabetes — what does that mean?\" and the agent reasons through real hospital data using the ReAct pattern (Reason + Act) to give a warm, data-grounded response. It runs on Groq's free LLaMA API with a Gradio UI. You can find it on her GitHub."
+  },
+  {
+    keys: ['open avenues', 'fellowship', 'project', 'projects', 'github', 'trading', 'pipeline', 'trade error', 'finance', 'financial'],
+    answer: "Two featured projects: (1) Hospital AI Agent — a patient-facing chatbot using the ReAct reasoning pattern, built during the Open Avenues Fellowship. (2) Trading Operations Data Pipeline — an end-to-end pipeline for detecting trade errors in financial operations. Both are on her GitHub: github.com/shruthi-13"
+  },
+  {
+    keys: ['looking for', 'open to', 'hire', 'opportunity', 'job', 'role', 'analyst', 'full-time', 'fulltime'],
+    answer: "She's actively looking for full-time roles — Business Analyst, Data Analyst, Operations Analyst, or BI Analyst — ideally in Chicago, though she's open to the right opportunity. She's on STEM OPT, so no visa sponsorship needed for the typical OPT window."
+  },
+  {
+    keys: ['contact', 'reach', 'email', 'linkedin', 'connect', 'message'],
+    answer: "Best way to reach her is LinkedIn: linkedin.com/in/shruthi-gs — she's pretty responsive there. You can also check out her work on GitHub: github.com/shruthi-13"
+  },
+  {
+    keys: ['experience', 'intern', 'mindset2money', 'sapphire', 'conference'],
+    answer: "She has a few roles: Head of BI & Ops Analytics at Wakanaka (current), Data Analytics Intern at Mindset2Money for the Generation Wealth Conference (current), and a prior Marketing Analytics internship at Sapphire Webs where she drove a 10% boost in social engagement through data-informed campaign work."
+  },
+  {
+    keys: ['chicago', 'location', 'where', 'based', 'india', 'relocat'],
+    answer: "She's based in Chicago, IL. Open to relocation for the right role — just ask!"
+  },
+  {
+    keys: ['stem', 'opt', 'visa', 'authorization', 'work auth'],
+    answer: "She's on STEM OPT, which means she can work in the US without sponsorship for an extended period. Great for employers who want to skip the visa process."
+  }
+];
+
+let chatOpen = false;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chat-panel').classList.toggle('open', chatOpen);
+  document.getElementById('chat-icon-open').style.display = chatOpen ? 'none' : 'block';
+  document.getElementById('chat-icon-close').style.display = chatOpen ? 'block' : 'none';
+  if (chatOpen) setTimeout(() => document.getElementById('chat-input').focus(), 100);
+}
+
+function askSug(btn) {
+  document.getElementById('chat-input').value = btn.textContent;
+  sendChat();
+}
+
+function sendChat() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+
+  addMsg(text, 'user');
+  document.getElementById('chat-suggestions').style.display = 'none';
+
+  setTimeout(() => {
+    const reply = getReply(text);
+    addMsg(reply, 'bot');
+  }, 380);
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function getReply(text) {
+  const q = text.toLowerCase();
+  for (const item of QA) {
+    if (item.keys.some(k => q.includes(k))) return item.answer;
+  }
+  return "Good question! I'm not sure about that one. The best place to find out is her LinkedIn (linkedin.com/in/shruthi-gs) — she'd love to chat.";
+}
+</script>
+
+</body>
+</html>
