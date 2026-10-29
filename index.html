@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shruthi Rajeshwari GS | Data &amp; Business Analytics</title>
+<meta content="Shruthi Rajeshwari GS — MBA Business Analytics graduate. Explore data analytics, BI, operations reporting, Python automation, Tableau and Power BI projects and experience." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #1F6F5C;
+  --green-light: #2E8C74;
+  --cream: #F7F7F4;
+  --white: #FFFFFF;
+  --gray-100: #EBEEEB;
+  --gray-300: #D8DDD7;
+  --gray-500: #7A857D;
+  --gray-700: #3D453F;
+  --text: #16211B;
+  --radius: 4px;
+  --radius-lg: 7px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(31,111,92,0.18);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 60px;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 48px;
+
+  background: rgba(247,247,244,0.96);
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-logo span {
+  color: var(--green);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--gray-700);
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+
+  border: none;
+  background: none;
+
+  cursor: pointer;
+}
+
+.nav-hamburger span {
+  width: 22px;
+  height: 2px;
+  display: block;
+  background: var(--text);
+}
+
+.nav-mobile-menu {
+  display: none;
+
+  position: fixed;
+
+  top: 60px;
+  left: 0;
+  right: 0;
+
+  z-index: 99;
+
+  padding: 15px 20px;
+
+  background: rgba(247,247,244,0.98);
+
+  border-bottom: 1px solid var(--gray-300);
+
+  flex-direction: column;
+}
+
+.nav-mobile-menu.open {
+  display: flex;
+}
+
+.nav-mobile-menu a {
+  color: var(--gray-700);
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid var(--gray-100);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+  padding: 96px 48px;
+}
+
+section:nth-child(even) {
+  background: var(--white);
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 52px;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  color: var(--green);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+  content: '';
+
+  width: 24px;
+  height: 1px;
+
+  background: var(--green);
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.section-rule {
+  width: 48px;
+  height: 2px;
+
+  background: var(--green);
+
+  margin-top: 16px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-primary,
+.btn-outline {
+  display: inline-block;
+
+  padding: 12px 27px;
+
+  border-radius: var(--radius);
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+  border: 1px solid var(--green);
+}
+
+.btn-primary:hover {
+  background: var(--green-light);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  color: var(--text);
+  border: 1px solid var(--gray-300);
+}
+
+.btn-outline:hover {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+#hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 48px 80px;
+
+  position: relative;
+  overflow: hidden;
+
+  background: var(--cream);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80&auto=format&fit=crop');
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.07;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(247,247,244,0.98) 48%,
+      rgba(247,247,244,0.84)
+    );
+}
+
+.hero-inner {
+  max-width: 1100px;
+  width: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 80px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--green);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+
+  width: 32px;
+  height: 1px;
+
+  background: var(--green);
+}
+
+h1 {
+  font-size: clamp(40px,5vw,60px);
+  font-weight: 600;
+  line-height: 1.08;
+
+  margin-bottom: 22px;
+}
+
+h1 em {
+  color: var(--green);
+  font-style: normal;
+}
+
+.hero-sub {
+  max-width: 580px;
+
+  color: var(--gray-700);
+
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 300;
+
+  margin-bottom: 30px;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 36px;
+}
+
+.chip {
+  border: 1px solid rgba(31,111,92,0.3);
+
+  background: rgba(31,111,92,0.06);
+
+  color: var(--green);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+
+  padding: 5px 12px;
+
+  border-radius: 2px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  width: 280px;
+  flex-shrink: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 2px;
+}
+
+.stat-box {
+  background: white;
+
+  border: 1px solid var(--gray-300);
+
+  padding: 28px 15px;
+
+  text-align: center;
+}
+
+.stat-num {
+  color: var(--green);
+
+  font-family: 'IBM Plex Mono', monospace;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  margin-bottom: 7px;
+}
+
+.stat-label {
+  color: var(--gray-500);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+.about-photo-wrap {
+  position: relative;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+  object-position: center 15%;
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--gray-300);
+}
+
+.about-photo-badge {
+  position: absolute;
+
+  bottom: -16px;
+  right: -16px;
+
+  background: white;
+
+  border: 1px solid var(--gray-300);
+
+  box-shadow: 0 6px 20px rgba(22,33,27,0.08);
+
+  border-radius: var(--radius-lg);
+
+  padding: 15px 20px;
+
+  text-align: center;
+}
+
+.about-photo-badge strong {
+  display: block;
+
+  color: var(--green);
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 22px;
+}
+
+.about-photo-badge span {
+  color: var(--gray-500);
+
+  font-size: 10px;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.about-body {
+  color: var(--gray-700);
+  line-height: 1.8;
+}
+
+.about-body p + p {
+  margin-top: 16px;
+}
+
+.about-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.info-list {
+  list-style: none;
+  margin-top: 28px;
+}
+
+.info-list li {
+  display: flex;
+  gap: 12px;
+
+  padding: 11px 0;
+
+  border-bottom: 1px solid var(--gray-100);
+
+  font-size: 13px;
+}
+
+.info-key {
+  color: var(--gray-500);
+
+  min-width: 80px;
+
+  font-weight: 500;
+}
+
+.info-val {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.about-links {
+  margin-top: 24px;
+
+  display: flex;
+  gap: 20px;
+}
+
+.about-link {
+  color: var(--green);
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  border-bottom: 1px solid var(--gray-300);
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  gap: 48px;
+
+  padding: 38px 0;
+
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.exp-item:first-child {
+  padding-top: 0;
+}
+
+.exp-period {
+  color: var(--green);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.05em;
+
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+}
+
+.exp-company {
+  color: var(--gray-500);
+  font-size: 13px;
+}
+
+.exp-role {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  margin-bottom: 3px;
+}
+
+.exp-type {
+  color: var(--gray-500);
+
+  font-size: 12px;
+
+  margin-bottom: 14px;
+}
+
+.exp-bullets {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.exp-bullets li {
+  color: var(--gray-700);
+
+  font-size: 14px;
+  line-height: 1.65;
+
+  padding-left: 16px;
+
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  top: 9px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 16px;
+}
+
+.tag {
+  background: var(--gray-100);
+
+  color: var(--gray-700);
+
+  font-size: 10px;
+  font-weight: 500;
+
+  padding: 4px 9px;
+
+  border-radius: 2px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 24px;
+}
+
+.project-card {
+  background: white;
+
+  border: 1px solid var(--gray-300);
+
+  border-radius: var(--radius-lg);
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+.project-card:hover {
+  border-color: var(--green);
+
+  box-shadow: 0 8px 25px rgba(31,111,92,0.10);
+
+  transform: translateY(-2px);
+}
+
+.project-image-wrap {
+  width: 100%;
+  height: 260px;
+
+  background: #F0F2F0;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--gray-300);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  display: block;
+
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.02);
+}
+
+.project-body {
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.project-type {
+  color: var(--green);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  margin-bottom: 8px;
+}
+
+.project-name {
+  font-size: 18px;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  color: var(--gray-700);
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  margin-bottom: 18px;
+
+  flex: 1;
+}
+
+.project-metrics {
+  padding: 13px 0;
+
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+
+  margin-bottom: 15px;
+
+  color: var(--gray-700);
+
+  font-size: 12px;
+}
+
+.project-metrics strong {
+  color: var(--text);
+}
+
+.project-tools {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  margin-bottom: 18px;
+}
+
+.project-link {
+  color: var(--green);
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  align-self: flex-start;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 20px;
+}
+
+.skill-group {
+  background: var(--cream);
+
+  border: 1px solid var(--gray-300);
+
+  border-radius: var(--radius-lg);
+
+  padding: 25px;
+}
+
+.skill-group-title {
+  color: var(--green);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  margin-bottom: 15px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.skill-group-title::before {
+  content: '';
+
+  width: 14px;
+  height: 1px;
+
+  background: var(--green);
+}
+
+.skill-group .exp-tags {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.edu-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+}
+
+.edu-card {
+  background: white;
+
+  border: 1px solid var(--gray-300);
+  border-left: 3px solid var(--green);
+
+  padding: 25px;
+
+  border-radius:
+    0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.edu-degree {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  margin-bottom: 5px;
+}
+
+.edu-school {
+  color: var(--gray-700);
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.edu-year {
+  color: var(--green);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.05em;
+
+  margin: 7px 0 11px;
+}
+
+.edu-note {
+  color: var(--gray-500);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+#contact {
+  background: var(--gray-100);
+}
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 60px;
+}
+
+.contact-body {
+  color: var(--gray-700);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.contact-body strong {
+  color: var(--text);
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.contact-row {
+  background: white;
+
+  border: 1px solid var(--gray-300);
+
+  border-radius: var(--radius);
+
+  padding: 13px 16px;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.contact-row:hover {
+  border-color: var(--green);
+}
+
+.contact-label {
+  display: block;
+
+  color: var(--gray-500);
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.contact-val {
+  color: var(--gray-700);
+
+  font-size: 13px;
+}
+
+.contact-cta-box {
+  background: white;
+
+  border: 1px solid var(--gray-300);
+
+  border-radius: var(--radius-lg);
+
+  padding: 36px;
+
+  text-align: center;
+}
+
+.contact-cta-title {
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+.contact-cta-sub {
+  color: var(--gray-500);
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  margin-bottom: 23px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  background: white;
+
+  border-top: 1px solid var(--gray-300);
+
+  padding: 22px 48px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.footer-copy,
+.footer-note {
+  color: var(--gray-500);
+
+  font-size: 11px;
+}
+
+.footer-note span {
+  color: var(--green);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  nav {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  section {
+    padding: 65px 20px;
+  }
+
+  #hero {
+    padding: 90px 20px 60px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 40px;
+  }
+
+  .hero-stats {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+  }
+
+  .exp-item {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .projects-grid,
+  .skills-grid,
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  nav {
+    height: 54px;
+
+    padding: 0 16px;
+  }
+
+  .nav-logo {
+    font-size: 15px;
+  }
+
+  .nav-mobile-menu {
+    top: 54px;
+  }
+
+  #hero {
+    min-height: auto;
+
+    padding: 80px 16px 50px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .hero-stats {
+    width: 100%;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-box {
+    padding: 20px 10px;
+  }
+
+  section {
+    padding: 55px 16px;
+  }
+
+  .about-photo-badge {
+    right: -4px;
+    bottom: -10px;
+  }
+
+  .project-image-wrap {
+    height: 210px;
+  }
+
+  .project-body {
+    padding: 20px;
+  }
+
+  .contact-cta-box {
+    padding: 25px 20px;
+  }
+
+  footer {
+    padding: 18px 16px;
+
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+}
+
+
+/* Recruiter-first redesign */
+:root{--green:#0e766d;--green-light:#0b9487;--cream:#f7f9fb;--white:#fff;--gray-100:#eef2f5;--gray-300:#dce5ea;--gray-500:#607382;--gray-700:#354858;--text:#102b3a;--radius:10px;--radius-lg:18px}
+body{font-size:15px;line-height:1.65;background:var(--cream)}
+nav{height:76px;padding:0 max(32px,calc((100vw - 1180px)/2));background:rgba(255,255,255,.94);box-shadow:0 3px 24px rgba(16,43,58,.035)}
+.nav-logo{font-size:19px;letter-spacing:-.6px}.nav-links{gap:23px}.nav-links a{font-size:10px;letter-spacing:.05em}
+.nav-cta{background:#102b3a;color:white;text-decoration:none;padding:11px 17px;border-radius:8px;font-size:12px;font-weight:700}
+section{padding:100px 32px}.section-inner{max-width:1140px}.section-header{margin-bottom:38px}h2{letter-spacing:-1.2px;font-size:clamp(32px,4vw,48px)}
+#hero{min-height:710px;padding:150px 32px 110px;background:radial-gradient(circle at 80% 20%,#c8eae4 0%,transparent 33%),linear-gradient(145deg,#f7fafb,#edf5f5)}
+.hero-overlay{display:none}.hero-inner{max-width:1140px;gap:65px}.hero-text{flex:1.25}.hero-eyebrow{font-size:11px}h1{font-size:clamp(44px,5.3vw,76px);letter-spacing:-3px;line-height:1.06;margin-bottom:28px}h1 em{color:var(--green)}
+.hero-sub{font-size:17px;font-weight:400;max-width:640px}.hero-stats{width:340px;gap:12px}.stat-box{border-radius:15px;text-align:left;padding:25px 20px;box-shadow:0 14px 35px rgba(15,45,55,.055)}.stat-num{font-size:30px;letter-spacing:-1px}.stat-label{font-size:10px;line-height:1.5;margin-top:9px}
+.btn-primary,.btn-outline{border-radius:9px;padding:14px 22px;font-size:11px}.btn-primary{background:#102b3a;border-color:#102b3a}.btn-primary:hover{background:var(--green)}
+.chip,.tag{border-radius:7px}.chip{font-size:10px;padding:7px 11px}.section-eyebrow{letter-spacing:.11em}.section-intro{color:var(--gray-500);margin-top:15px;max-width:650px}
+.about-grid{gap:80px}.about-photo{border-radius:18px}.about-photo-wrap{background:#e7efef;border-radius:18px;min-height:250px}.about-photo-badge{border-radius:12px}
+.exp-item{grid-template-columns:205px 1fr;gap:40px;padding:34px 0}.exp-role{font-size:21px;letter-spacing:-.4px}.exp-bullets li{font-size:14px}.exp-list{border-top:1px solid var(--gray-300)}
+.projects-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.project-card{border-radius:16px;box-shadow:0 5px 24px rgba(16,43,58,.04)}.project-image-wrap{height:200px;background:linear-gradient(145deg,#e9f3f1,#e7edf4)}.project-body{padding:22px}.project-name{font-size:19px;letter-spacing:-.4px}.project-desc{font-size:13px}.project-metrics{line-height:1.9}.project-link{margin-top:auto}
+.image-missing::after{content:'Project visual • add image to images/ folder';font-size:12px;color:#607382;padding:25px;text-align:center}
+.skill-group{border-radius:15px;background:white}.edu-card{border-radius:0 15px 15px 0}.contact-cta-box{border-radius:18px}.contact-row{border-radius:10px}
+.skip-link{position:absolute;left:-999px;top:5px;z-index:1000;background:white;padding:10px}.skip-link:focus{left:10px}
+@media(max-width:1100px){.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav-cta{display:none}}
+@media(max-width:900px){nav{height:60px;padding:0 20px}.hero-inner{gap:30px}#hero{min-height:unset;padding:120px 20px 65px}.hero-stats{width:100%;max-width:620px}.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{letter-spacing:-1.8px}}
+@media(max-width:600px){.projects-grid{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr 1fr}.stat-box{padding:18px 12px}.stat-num{font-size:23px}h1{font-size:39px}.section-inner{width:100%}.section-header{margin-bottom:28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body><a class="skip-link" href="#projects">Skip to projects</a>
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
+<nav>
+<a class="nav-logo" href="#hero">
+    Shruthi Rajeshwari <span>GS</span>
+</a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button aria-label="Open navigation menu" class="nav-hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<a class="nav-cta" href="mailto:shruthigs2002@gmail.com">Get in touch ↗</a></nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+<a href="#about" onclick="closeMobile()">About</a>
+<a href="#experience" onclick="closeMobile()">Experience</a>
+<a href="#projects" onclick="closeMobile()">Projects</a>
+<a href="#skills" onclick="closeMobile()">Skills</a>
+<a href="#education" onclick="closeMobile()">Education</a>
+<a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+<!-- ======================================================
+     HERO
+====================================================== -->
+<section id="hero">
+<div class="hero-overlay"></div>
+<div class="hero-inner">
+<div class="hero-text">
+<div class="hero-eyebrow">
+        Data · Business · Operations Analytics
+      </div>
+<h1>Analytics that turn <em>complex data into clear decisions.</em></h1>
+<p class="hero-sub">I build dashboards, automate data workflows, and translate business questions into measurable insights. MBA in Business Analytics with experience across operations, healthcare, and strategy.</p>
+<div class="hero-chips">
+<span class="chip">Data Analytics</span>
+<span class="chip">Business Analysis</span>
+<span class="chip">Operations Analytics</span>
+<span class="chip">Business Intelligence</span>
+<span class="chip">Open to Relocation</span>
+</div>
+<div class="hero-actions">
+<a class="btn-primary" href="#projects">
+          View My Work
+        </a>
+<a class="btn-outline" href="#contact">
+          Connect With Me
+        </a>
+<a class="btn-outline" download="" href="Shruthi_Rajeshwari_GS_Resume.pdf">Download Resume</a></div>
+</div>
+<div class="hero-stats">
+<div class="stat-box"><div class="stat-num">200+</div><div class="stat-label">Conference registrations tracked</div></div><div class="stat-box"><div class="stat-num">4–5 hrs</div><div class="stat-label">Weekly reporting time saved</div></div><div class="stat-box"><div class="stat-num">20–25%</div><div class="stat-label">Less manual ESG reporting</div></div><div class="stat-box"><div class="stat-num">3.77</div><div class="stat-label">MBA GPA / 4.0</div></div></div>
+</div>
+</section>
+<!-- ======================================================
+     ABOUT
+====================================================== -->
+<section id="about">
+<div class="section-inner">
+<div class="section-header">
+<div class="section-eyebrow">
+        Who I Am
+      </div>
+<h2>
+        I enjoy finding the story<br/>
+        behind the numbers.
+      </h2>
+<div class="section-rule"></div>
+</div>
+<div class="about-grid">
+<div class="about-photo-wrap">
+<img alt="Shruthi Rajeshwari GS" class="about-photo" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="images/shruthi.png"/>
+<div class="about-photo-badge">
+<strong>MBA</strong>
+<span>IIT Stuart · 2026</span>
+</div>
+</div>
+<div class="about-right">
+<div class="about-body">
+<p>
+
+            I started with a background in
+            <strong>Biomedical Engineering</strong>, where I developed an
+            interest in analytical problem-solving and understanding how
+            systems work.
+
+            That interest gradually shifted toward business and data,
+            leading me to pursue an
+            <strong>
+              MBA in Business Analytics at Illinois Institute of Technology.
+            </strong>
+</p>
+<p>
+
+            Since then, I've worked on analytics problems across business
+            operations, strategy, events, and retail.
+
+            My work has included cleaning and reconciling data from
+            multiple sources, building KPI dashboards, analyzing
+            operational performance, documenting business requirements,
+            and turning raw information into reporting that teams can
+            actually use.
+
+          </p>
+<p>
+
+            I particularly enjoy the part of analytics that sits between
+            <strong>the data and the decision</strong> — understanding the
+            business question, figuring out what information matters, and
+            communicating the result clearly.
+
+          </p>
+</div>
+<ul class="info-list">
+<li>
+<span class="info-key">Location</span>
+<span class="info-val">
+              St. Augustine, FL · Open to relocation
+            </span>
+</li>
+<li>
+<span class="info-key">Status</span>
+<span class="info-val">
+              Actively seeking full-time opportunities
+            </span>
+</li>
+<li>
+<span class="info-key">Roles</span>
+<span class="info-val">
+              Data · Business · Operations · BI Analyst
+            </span>
+</li>
+<li>
+<span class="info-key">Tools</span>
+<span class="info-val">
+              SQL · Python · Excel · Tableau · Power BI · R
+            </span>
+</li>
+</ul>
+<div class="about-links">
+<a class="about-link" href="https://linkedin.com/in/shruthi-gs" rel="noopener noreferrer" target="_blank">
+            LinkedIn ↗
+          </a>
+<a class="about-link" href="https://github.com/shruthi-13" rel="noopener noreferrer" target="_blank">
+            GitHub ↗
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+     EXPERIENCE
+====================================================== -->
+<section id="experience">
+<div class="section-inner">
+<div class="section-header">
+<div class="section-eyebrow">
+        Where I've Worked
+      </div>
+<h2>Experience</h2>
+<div class="section-rule"></div>
+</div>
+<div class="exp-list">
+<div class="exp-item"><div class="exp-meta"><div class="exp-period">Jun 2026 – Jul 2026</div><div class="exp-company">Wakanaka Business Solutions · Remote</div></div><div class="exp-content"><div class="exp-role">Business Development &amp; Analytics Intern</div><div class="exp-type">Internship</div><ul class="exp-bullets"><li>Designed an executive dashboard covering 18 KPIs across three business pillars; task completion against eight-week sprint targets improved approximately 25%.</li><li>Built a weighted evaluation framework for 41 candidates to identify skill gaps and inform mentoring programs associated with a 5% performance improvement.</li><li>Streamlined corporate account pipeline tracking, reducing manual management effort by 40%.</li></ul><div class="exp-tags"><span class="tag">KPI Design</span><span class="tag">ClickUp</span><span class="tag">Operations Reporting</span></div></div></div><!-- MINDSET2MONEY -->
+<div class="exp-item">
+<div class="exp-meta">
+<div class="exp-period">Jun 2026 – Present</div>
+<div class="exp-company">
+            Mindset2Money · Remote
+          </div>
+</div>
+<div class="exp-content">
+<div class="exp-role">Data Analyst</div>
+<div class="exp-type">
+            Volunteer · Remote
+          </div>
+<ul class="exp-bullets"><li>Engineered a registration dashboard tracking 200+ attendees; conference attendance increased 71% year over year, with 82% first-time participants.</li><li>Developed Python validation scripts identifying 40+ data anomalies before MVP app launch.</li><li>Automated exports, KPI calculations, and cross-sheet synchronizations, saving 4–5 hours per week.</li><li>Standardized evaluation of 55 speaker proposals and prioritized partner outreach.</li></ul>
+<div class="exp-tags">
+<span class="tag">Excel</span>
+<span class="tag">Python</span>
+<span class="tag">Google Sheets</span>
+<span class="tag">Jotform</span>
+<span class="tag">Data Quality</span>
+<span class="tag">KPI Reporting</span>
+<span class="tag">Survey Analysis</span>
+</div>
+</div>
+</div>
+<!-- GLOBAL STRATOS -->
+<div class="exp-item">
+<div class="exp-meta">
+<div class="exp-period">Sep 2025 – Feb 2026</div>
+<div class="exp-company">
+            Global Stratos · Remote
+          </div>
+</div>
+<div class="exp-content">
+<div class="exp-role">Business Analytics &amp; Strategy Intern</div>
+<div class="exp-type">
+            Internship · Remote
+          </div>
+<ul class="exp-bullets"><li>Worked with cross-functional leadership to define KPI metrics, formulas, targets, owners, and reporting cadence.</li><li>Designed data architecture and interactive Tableau dashboards for operational trends, identifying underperforming periods and contributing to a reported 3–5% lift in monthly performance.</li><li>Standardized reporting workflows across teams, reducing manual preparation time by an estimated 20–25%.</li></ul>
+<div class="exp-tags">
+<span class="tag">Excel</span>
+<span class="tag">KPI Frameworks</span>
+<span class="tag">Business Analysis</span>
+<span class="tag">Requirements Documentation</span>
+<span class="tag">Process Improvement</span>
+</div>
+</div>
+</div>
+<!-- SAPPHIRE WEBS -->
+<div class="exp-item">
+<div class="exp-meta">
+<div class="exp-period">May 2025 – Jul 2025</div>
+<div class="exp-company">
+            Sapphire Webs · Remote
+          </div>
+</div>
+<div class="exp-content">
+<div class="exp-role">Marketing Executive Intern</div>
+<div class="exp-type">
+            Internship · Coimbatore, India
+          </div>
+<ul class="exp-bullets"><li>Analyzed weekly campaign trends in Excel and adjusted content placement and SEO strategy, increasing engagement 10% and gaining 100+ followers in two months.</li></ul>
+<div class="exp-tags">
+<span class="tag">Excel</span>
+<span class="tag">Marketing Analytics</span>
+<span class="tag">SEO</span>
+<span class="tag">Campaign Analysis</span>
+</div>
+</div>
+</div>
+<!-- SRI MAHAGANAPATHY HARDWARES -->
+<div class="exp-item">
+<div class="exp-meta">
+<div class="exp-period">Jan 2024 – Jul 2025</div>
+<div class="exp-company">
+            Sri Mahaganapathy Hardwares · Coimbatore, India
+          </div>
+</div>
+<div class="exp-content">
+<div class="exp-role">Business Operations Analyst</div>
+<div class="exp-type">
+            Part-time · Family-owned Business
+          </div>
+<ul class="exp-bullets"><li>Analyzed 5,000+ transactions and 300+ SKUs to identify demand patterns, return drivers, stockout risks, and product margins.</li><li>Developed Excel reporting and Tableau dashboards for executive monitoring, contributing to a reported 15% increase in revenue.</li><li>Improved inventory tracking and demand forecasting workflows, reducing stockouts by 7%.</li></ul>
+<div class="exp-tags">
+<span class="tag">Tableau</span>
+<span class="tag">SQL</span>
+<span class="tag">Python</span>
+<span class="tag">Excel</span>
+<span class="tag">Inventory Analysis</span>
+<span class="tag">Business Operations</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+     PROJECTS
+====================================================== -->
+<section id="projects">
+<div class="section-inner">
+<div class="section-header">
+<div class="section-eyebrow">
+        Selected Work
+      </div>
+<h2>Selected analytics work</h2>
+<div class="section-rule"></div>
+<p class="section-intro">Real dashboards, predictive models, and data pipelines—each designed around a decision or operational problem.</p></div>
+<div class="projects-grid">
+<!-- HEALTHCARE TABLEAU -->
+<article class="project-card">
+<div class="project-image-wrap">
+<img alt="Healthcare Vulnerability and Socioeconomic Risk Analysis Tableau Dashboard" class="project-image" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="images/healthcare-tableau.png"/>
+</div>
+<div class="project-body">
+<div class="project-type">
+            Healthcare Analytics · Tableau
+          </div>
+<h3 class="project-name">
+            Healthcare Vulnerability &amp; Socioeconomic Risk Analysis
+          </h3>
+<p class="project-desc">
+
+            Built an interactive Tableau analysis examining healthcare
+            capacity and socioeconomic vulnerability across Illinois.
+            Combined hospital capacity and socioeconomic indicators and
+            designed State → Region → County drill-down analysis.
+
+          </p>
+<div class="project-metrics">
+<strong>Focus:</strong>
+            Hospital capacity · socioeconomic risk · geographic analysis
+
+          </div>
+<div class="project-tools">
+<span class="tag">Tableau</span>
+<span class="tag">LOD</span>
+<span class="tag">Parameters</span>
+<span class="tag">Set Actions</span>
+<span class="tag">Data Visualization</span>
+</div>
+<a class="project-link" href="https://github.com/shruthi-13" rel="noopener noreferrer" target="_blank">Explore GitHub projects ↗</a>
+</div>
+</article>
+<!-- ER POWER BI -->
+<article class="project-card">
+<div class="project-image-wrap">
+<img alt="ER Patient Flow Power BI Dashboard" class="project-image" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="images/er-dashboard.png"/>
+</div>
+<div class="project-body">
+<div class="project-type">
+            Operations Analytics · Power BI
+          </div>
+<h3 class="project-name">
+            ER Patient Flow Dashboard
+          </h3>
+<p class="project-desc">
+
+            Analyzed emergency-room records to understand patient flow,
+            waiting times, admission patterns, and operational performance.
+            Built an interactive Power BI dashboard to make patient-flow
+            metrics easier to explore.
+
+          </p>
+<div class="project-metrics">
+<strong>Dataset:</strong> 9,216 records
+            ·
+            <strong>Avg. Wait:</strong> 35.26 min
+            ·
+            <strong>Admission:</strong> 50.04%
+
+          </div>
+<div class="project-tools">
+<span class="tag">Power BI</span>
+<span class="tag">DAX</span>
+<span class="tag">Healthcare Analytics</span>
+<span class="tag">Dashboard Design</span>
+</div>
+<a class="project-link" href="https://github.com/shruthi-13" rel="noopener noreferrer" target="_blank">Explore GitHub projects ↗</a>
+</div>
+</article>
+<!-- TFA -->
+<article class="project-card">
+<div class="project-image-wrap">
+<img alt="Applicant Withdrawal Prediction Analysis" class="project-image" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="images/tfa-prediction.png"/>
+</div>
+<div class="project-body">
+<div class="project-type">
+            Predictive Analytics · R
+          </div>
+<h3 class="project-name">
+            Applicant Withdrawal Prediction
+          </h3>
+<p class="project-desc">
+
+            Analyzed applicant records to investigate factors associated
+            with candidate withdrawal. Engineered predictive features,
+            addressed class imbalance, and compared multiple classification
+            approaches.
+
+          </p>
+<div class="project-metrics">
+<strong>Records:</strong> 74,839
+            ·
+            <strong>Accuracy:</strong> 94.1%
+            ·
+            <strong>Sensitivity:</strong> 90.9%
+            ·
+            <strong>Specificity:</strong> 97.3%
+
+          </div>
+<div class="project-tools">
+<span class="tag">R</span>
+<span class="tag">C5.0</span>
+<span class="tag">Machine Learning</span>
+<span class="tag">Feature Engineering</span>
+</div>
+<a class="project-link" href="https://github.com/shruthi-13" rel="noopener noreferrer" target="_blank">Explore GitHub projects ↗</a>
+</div>
+</article>
+<!-- VENDOR -->
+<article class="project-card">
+<div class="project-image-wrap">
+<img alt="Vendor Intelligence Power BI Dashboard" class="project-image" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="images/vendor-dashboard.png"/>
+</div>
+<div class="project-body">
+<div class="project-type">
+            Business Intelligence · Power BI
+          </div>
+<h3 class="project-name">
+            Vendor Intelligence Dashboard
+          </h3>
+<p class="project-desc">
+
+            Built a vendor-performance dashboard to analyze revenue,
+            invoices, margins, and performance against a target margin.
+            Designed interactive reporting to make vendor performance
+            easier to compare over time.
+
+          </p>
+<div class="project-metrics">
+<strong>Period:</strong> 2019 Q1 – 2025 Q2
+            ·
+            <strong>Vendors:</strong> 16
+            ·
+            <strong>Margin Goal:</strong> 20%
+
+          </div>
+<div class="project-tools">
+<span class="tag">Power BI</span>
+<span class="tag">DAX</span>
+<span class="tag">Vendor Analytics</span>
+<span class="tag">KPI Reporting</span>
+</div>
+<a class="project-link" href="https://github.com/shruthi-13" rel="noopener noreferrer" target="_blank">Explore GitHub projects ↗</a>
+</div>
+</article>
+<!-- TRADING PIPELINE -->
+<article class="project-card">
+<div class="project-image-wrap">
+<img alt="Trading Operations Data Pipeline Dashboard" class="project-image" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="images/trading-pipeline.png"/>
+</div>
+<div class="project-body">
+<div class="project-type">
+            Data Pipeline · Python
+          </div>
+<h3 class="project-name">
+            Trading Operations Data Pipeline
+          </h3>
+<p class="project-desc">
+
+            Built an end-to-end Python pipeline to simulate and identify
+            trade-processing errors. Extracted financial data from SQLite,
+            cleaned and reconciled positions, and flagged matched and
+            mismatched transactions.
+
+          </p>
+<div class="project-metrics">
+<strong>Focus:</strong>
+            Data cleaning · reconciliation · exception detection
+
+          </div>
+<div class="project-tools">
+<span class="tag">Python</span>
+<span class="tag">Pandas</span>
+<span class="tag">SQLite</span>
+<span class="tag">Data Reconciliation</span>
+</div>
+<a class="project-link" href="https://github.com/shruthi-13/trading-pipeline-trade-errors" rel="noopener noreferrer" target="_blank">
+            View on GitHub ↗
+          </a>
+</div>
+</article>
+<!-- HOSPITAL AI -->
+<article class="project-card">
+<div class="project-image-wrap">
+<img alt="Hospital AI Agent Application" class="project-image" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')" src="images/hospital-ai-agent.png"/>
+</div>
+<div class="project-body">
+<div class="project-type">
+            AI Application · Python
+          </div>
+<h3 class="project-name">
+            Hospital AI Agent
+          </h3>
+<p class="project-desc">
+
+            Built a prototype conversational application combining
+            structured hospital data with an AI interface. The project
+            explores how natural-language interaction can make structured
+            information easier to access and understand.
+
+          </p>
+<div class="project-metrics">
+<strong>Focus:</strong>
+            AI agents · structured data · natural-language interaction
+
+          </div>
+<div class="project-tools">
+<span class="tag">Python</span>
+<span class="tag">Generative AI</span>
+<span class="tag">Gradio</span>
+<span class="tag">ReAct</span>
+</div>
+<a class="project-link" href="https://github.com/shruthi-13/hospital-ai-agent" rel="noopener noreferrer" target="_blank">
+            View on GitHub ↗
+          </a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ======================================================
+     SKILLS
+====================================================== -->
+<section id="skills">
+<div class="section-inner">
+<div class="section-header">
+<div class="section-eyebrow">
+        What I Work With
+      </div>
+<h2>Skills &amp; Tools</h2>
+<div class="section-rule"></div>
+</div>
+<div class="skills-grid">
+<div class="skill-group">
+<div class="skill-group-title">
+          Data Analysis
+        </div>
+<div class="exp-tags">
+<span class="tag">SQL</span>
+<span class="tag">Python</span>
+<span class="tag">Pandas</span>
+<span class="tag">R</span>
+<span class="tag">Excel</span>
+<span class="tag">Google Sheets</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-title">
+          Business Intelligence
+        </div>
+<div class="exp-tags">
+<span class="tag">Tableau</span>
+<span class="tag">Power BI</span>
+<span class="tag">DAX</span>
+<span class="tag">Dashboard Design</span>
+<span class="tag">Data Visualization</span>
+<span class="tag">KPI Development</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-title">
+          Data Management
+        </div>
+<div class="exp-tags">
+<span class="tag">Data Cleaning</span>
+<span class="tag">Data Validation</span>
+<span class="tag">Data Reconciliation</span>
+<span class="tag">Exploratory Data Analysis</span>
+<span class="tag">Pivot Tables</span>
+<span class="tag">XLOOKUP / VLOOKUP</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-title">
+          Business &amp; Operations
+        </div>
+<div class="exp-tags">
+<span class="tag">Requirements Documentation</span>
+<span class="tag">Process Analysis</span>
+<span class="tag">KPI Reporting</span>
+<span class="tag">Operational Reporting</span>
+<span class="tag">Stakeholder Communication</span>
+<span class="tag">Survey Analysis</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-title">
+          Additional Tools
+        </div>
+<div class="exp-tags">
+<span class="tag">Jotform</span>
+<span class="tag">ClickUp</span>
+<span class="tag">KNIME</span>
+<span class="tag">GitHub</span>
+<span class="tag">Canva</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+     EDUCATION
+====================================================== -->
+<section id="education">
+<div class="section-inner">
+<div class="section-header">
+<div class="section-eyebrow">
+        Academic Background
+      </div>
+<h2>Education</h2>
+<div class="section-rule"></div>
+</div>
+<div class="edu-grid">
+<div class="edu-card">
+<div class="edu-degree">
+          MBA — Business Analytics
+        </div>
+<div class="edu-school">
+          Illinois Institute of Technology · Stuart School of Business
+        </div>
+<div class="edu-year">
+          Aug 2024 – May 2026 · GPA 3.77/4.0 · Chicago, IL
+        </div>
+<div class="edu-note">
+
+          STEM-designated MBA focused on business analytics,
+          data-driven decision-making, visualization, statistics,
+          and business strategy.
+
+        </div>
+</div>
+<div class="edu-card">
+<div class="edu-degree">
+          B.E. — Biomedical Engineering
+        </div>
+<div class="edu-school">
+          PSG College of Technology
+        </div>
+<div class="edu-year">
+          Nov 2021 – May 2024 · CGPA 8.67/10.0 · Coimbatore, India
+        </div>
+<div class="edu-note">
+
+          Engineering foundation in quantitative analysis,
+          systems thinking, research, and technical problem-solving.
+
+        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+     CONTACT
+====================================================== -->
+<section id="contact">
+<div class="section-inner">
+<div class="section-header">
+<div class="section-eyebrow">
+        Get In Touch
+      </div>
+<h2>Let's connect.</h2>
+<div class="section-rule"></div>
+</div>
+<div class="contact-grid">
+<div>
+<p class="contact-body">
+
+          I'm currently seeking full-time opportunities in
+
+          <strong>
+            Data Analytics, Business Analysis, Operations Analytics,
+            and Business Intelligence.
+          </strong>
+<br/><br/>
+
+          I'm particularly interested in roles where I can work with
+          business and operational data, improve reporting, investigate
+          problems, and help teams make better-informed decisions.
+
+          <br/><br/>
+
+          Based in <strong>St. Augustine, Florida</strong> and open to
+          relocation across the United States.
+
+        </p>
+<div class="contact-items">
+<a class="contact-row" href="https://linkedin.com/in/shruthi-gs" rel="noopener noreferrer" target="_blank">
+<span class="contact-label">
+              LinkedIn
+            </span>
+<span class="contact-val">
+              linkedin.com/in/shruthi-gs
+            </span>
+</a>
+<a class="contact-row" href="https://github.com/shruthi-13" rel="noopener noreferrer" target="_blank">
+<span class="contact-label">
+              GitHub
+            </span>
+<span class="contact-val">
+              github.com/shruthi-13
+            </span>
+</a>
+</div>
+</div>
+<div class="contact-cta-box">
+<div class="contact-cta-title">
+          Interested in working together?
+        </div>
+<p class="contact-cta-sub">
+
+          I'm open to full-time analyst opportunities and conversations
+          about how my analytics background could support your team.
+
+        </p>
+<a class="btn-primary" href="https://linkedin.com/in/shruthi-gs" rel="noopener noreferrer" target="_blank">
+          Connect on LinkedIn
+        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+<footer>
+<span class="footer-copy">
+    © 2026 Shruthi Rajeshwari GS · St. Augustine, FL
+  </span>
+<span class="footer-note">
+    Data · Business · <span>Operations Analytics</span>
+</span>
+</footer>
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+<script>
+
+const hamburger =
+  document.getElementById('hamburger');
+
+const mobileMenu =
+  document.getElementById('mobileMenu');
+
+
+hamburger.addEventListener(
+  'click',
+  function () {
+
+    mobileMenu.classList.toggle('open');
+
+  }
+);
+
+
+function closeMobile() {
+
+  mobileMenu.classList.remove('open');
+
+}
+
+
+document.addEventListener(
+  'click',
+  function (event) {
+
+    const clickedInsideMenu =
+      mobileMenu.contains(event.target);
+
+    const clickedHamburger =
+      hamburger.contains(event.target);
+
+    if (
+      mobileMenu.classList.contains('open') &&
+      !clickedInsideMenu &&
+      !clickedHamburger
+    ) {
+
+      closeMobile();
+
+    }
+
+  }
+);
+
+</script>
+</body>
+</html>
